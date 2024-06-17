@@ -6,7 +6,8 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - http:
+    - host: accommodations.mk
+      http:
         paths:
           - pathType: Prefix
             path: "/"
@@ -14,4 +15,11 @@ spec:
               service:
                 name: frontend-service
                 port:
-                  number: 5173
+                  number: 80
+          - pathType: Prefix
+            path: "/api"
+            backend:
+              service:
+                name: backend-service
+                port:
+                  number: 80

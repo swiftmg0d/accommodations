@@ -9,7 +9,7 @@ spec:
       targetPort: 5432
   selector:
     app: postgres
-  type: LoadBalancer
+  # type: LoadBalancer
 
 ---
 apiVersion: v1
@@ -21,9 +21,9 @@ spec:
   selector:
     app: backend
   ports:
-    - port: 8080
+    - port: 80
       targetPort: 8080
-  type: LoadBalancer
+  # type: LoadBalancer
 
 ---
 apiVersion: v1
@@ -35,6 +35,6 @@ spec:
   selector:
     app: frontend
   ports:
-    - port: 5173
+    - port: 80
       targetPort: 5173
-  type: LoadBalancer
+  # type: LoadBalancer

@@ -81,5 +81,8 @@ spec:
       containers:
         - name: frontend
           image: swiftmg0d/accommodations-frontend:latest
+          env:
+            - name: VITE_BACKEND_URL
+              value: "http://accommodations.mk/api"
           ports:
             - containerPort: 5173
